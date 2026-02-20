@@ -5,11 +5,11 @@ on:
       - labeled
 jobs:
   transfer:
-    runs-on: ubuntu-latest
+    runs-on: docker
     steps:
       - name: Transfer
         uses: lando/transfer-issue-action@v2
         with:
-          token: ${{ secrets.TRANSFER_ISSUE_TOKEN }}
+          token: ${{ secrets.ACTIONS_TOKEN }}
           router: move:firefly-iii
           create_stub: false
